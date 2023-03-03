@@ -1,6 +1,8 @@
 
 const inquirer = require('inquirer');
 const engineer = require(`./lib/engineer`)
+const intern = require (`./lib/intern`)
+const manager = require(`./lib/Manager`)
 
 
 const menuQuestions = [
@@ -133,7 +135,7 @@ function addintern(){
   inquirer
   .prompt(internQ)
   .then((answers) => { 
-    const int = new internQ (answers.name,answers.ID,answers.school,answers.email)
+    const int = new intern (answers.name,answers.ID,answers.school,answers.email)
   })
 }
 
@@ -141,7 +143,7 @@ function addmanagerQ(){
   inquirer
   .prompt(managerQ)
   .then((answers) => { 
-    const man = new managerQ (answers.name,answers.ID,answers.officeNumber,answers.email)
+    const man = new manager (answers.name,answers.ID,answers.officeNumber,answers.email)
   })
 }
 
